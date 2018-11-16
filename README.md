@@ -1,3 +1,4 @@
+B
 # Updated to EOSIO.CDT v1.4.0
 
 # Non-Fungible Token (NFT) 
@@ -94,19 +95,20 @@ CONTRACT nft : public eosio::contract {
                       asset quantity,
                       string memo);
 		      
-	/// @notice Sets owner of the token as a ram payer for stored data.
-	/// @param payer Account name of token owner
+	/// @notice Burns 1 token with specified "id" owned by account name "owner".
+	/// @param owner Account name of token owner
 	/// @param id Unique ID of the token to burn
 	ACTION burn(name owner,
                   id_type token_id);
 			 
-	/// @notice Burns 1 token with specified "id" owned by account name "owner".
-	/// @param owner Account name of token owner
-	/// @param id Unique ID of the token to burn
-        ACTION setrampayer(name payer, 
+
+    /// @notice Sets owner of the token as a ram payer for stored data.
+	/// @param payer Account name of token owner
+	/// @param id Unique ID of the token
+    ACTION setrampayer(name payer, 
 			   id_type id);
     
-    	/// Structure keeps information about the balance of tokens 
+    /// Structure keeps information about the balance of tokens 
 	/// for each symbol that is owned by an account. 
 	/// This structure is stored in the multi_index table.
         TABLE account {
